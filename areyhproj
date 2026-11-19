@@ -1,0 +1,347 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>AREYH</title>
+
+<!-- BUBBLY FONTS -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Baloo+2:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: white;
+    font-family: 'Fredoka', sans-serif;
+    overflow-x: hidden;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    height: 190px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #050505;
+    position: relative;
+    z-index: 5;
+}
+
+/* MAIN LOGO */
+
+.brand-name {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: clamp(75px, 12vw, 125px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    line-height: 1;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        #ffffff 15%,
+        #c9c9c9 28%,
+        #ffffff 42%,
+        #eeeeee 55%,
+        #ffffff 70%,
+        #999999 85%,
+        #ffffff 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    filter: drop-shadow(0px 3px 3px #999);
+}
+
+/* SUBTITLE */
+
+.subtitle {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin-top: 8px;
+}
+
+/* LEFT SIDEBAR */
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -180px;
+    width: 220px;
+    height: 100vh;
+    background: rgba(5, 5, 5, 0.97);
+    z-index: 20;
+    transition: left 0.4s ease;
+    padding-top: 130px;
+}
+
+.sidebar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20px;
+    width: 20px;
+    height: 100%;
+}
+
+/* OPEN SIDEBAR ON HOVER */
+
+.sidebar:hover {
+    left: 0;
+}
+
+/* SIDEBAR TEXT */
+
+.sidebar a {
+    display: block;
+    padding: 17px 25px;
+    text-decoration: none;
+
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        180deg,
+        #e0d1ff 0%,
+        #a98ad9 25%,
+        #74529f 60%,
+        #352044 100%
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #ffffff;
+    padding-left: 35px;
+}
+
+/* SIDEBAR INDICATOR */
+
+.sidebar-tab {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: vertical-rl;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* SWEATPANTS SECTION */
+
+.product-section {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    padding: 30px;
+}
+
+/* ONLY IMAGE PLACEHOLDER */
+
+.product-image {
+    width: 85%;
+    max-width: 1100px;
+    height: 75vh;
+
+    background-image: url('images/sweatpants.jpg');
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    /* NO BORDER, NO FRAME, NO BOX */
+}
+
+/* IMAGE SECTION TITLE */
+
+.product-title {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    margin-top: 20px;
+    color: #ffffff;
+}
+
+/* FOOTER */
+
+.footer {
+    width: 100%;
+    padding: 65px 20px;
+    background: #050505;
+    text-align: center;
+}
+
+.footer h2 {
+    font-family: 'Baloo 2', sans-serif;
+    font-size: 45px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    background: linear-gradient(
+        180deg,
+        #ffffff,
+        #999999,
+        #ffffff
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.footer p {
+    font-family: 'Fredoka', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: white;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.footer .copyright {
+    font-size: 9px;
+    color: #777;
+    margin-top: 30px;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    header {
+        height: 150px;
+    }
+
+    .brand-name {
+        font-size: 65px;
+    }
+
+    .subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .product-image {
+        width: 100%;
+        height: 65vh;
+    }
+
+    .footer h2 {
+        font-size: 38px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LEFT SIDEBAR -->
+
+<nav class="sidebar">
+
+    <div class="sidebar-tab">MENU</div>
+
+    <a href="#sweatpants">SWEATPANTS</a>
+
+    <!-- ADD MORE OPTIONS HERE LATER -->
+
+    <!-- <a href="#hoodies">HOODIES</a> -->
+    <!-- <a href="#shirts">SHIRTS</a> -->
+    <!-- <a href="#accessories">ACCESSORIES</a> -->
+
+</nav>
+
+
+<!-- BRAND HEADER -->
+
+<header>
+
+    <h1 class="brand-name">AREYH</h1>
+
+    <div class="subtitle">
+        FRIENDS, CONTENT, CLOTHS
+    </div>
+
+</header>
+
+
+<!-- SWEATPANTS IMAGE SECTION -->
+
+<section class="product-section" id="sweatpants">
+
+    <!-- YOUR ONE IMAGE PLACEHOLDER -->
+
+    <div class="product-image"></div>
+
+    <h2 class="product-title">
+        SWEATPANTS
+    </h2>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <p> Instagram @areyh</p>
+    <h9>contactareyh@gmail.com</h9>
+    <p class="copyright">
+        © 2026 AREYH
+    </p>
+
+
+</footer>
+    
+
+
+</body>
+</html>
+
